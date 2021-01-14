@@ -20,7 +20,6 @@ function Home() {
   useEffect(() => {
     const handleLoadData = async () => {
       setData({
-        ...data,
         error: null,
         profiles: [],
         loading: true,
@@ -31,7 +30,6 @@ function Home() {
         const request = await fetch("https://api.enye.tech/v1/challenge/records");
         const response = await request.json();
         setData({
-          ...data,
           loading: false,
           profiles: response.records.profiles,
           error: null,
@@ -39,7 +37,6 @@ function Home() {
         setfilteredProfileData(response.records.profiles);
       } catch (error) {
         setData({
-          ...data,
           loading: false,
           profiles: [],
           error: error.message,
