@@ -28,6 +28,7 @@ function Home() {
 
       try {
         const request = await fetch("https://api.enye.tech/v1/challenge/records");
+        // const request =  await fetch("")
         const response = await request.json();
         setData({
           loading: false,
@@ -103,7 +104,7 @@ function Home() {
             <CircularProgress />
           </div>
         </div>
-      ) : data.error ?
+      ) : data.error && data.error.length > 0?
       <div>
         <p>Error : {data.error}</p>
       </div>

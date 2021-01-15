@@ -12,7 +12,7 @@ const Main = ({
   value,
 }) => {
   return (
-    <main className="table-layout">
+    <div className="table-layout">
       <div className="container">
         <div className="title-filter">
           <h1>User Profiles</h1>
@@ -41,7 +41,7 @@ const Main = ({
           filterProfileData={filterProfileData}
         />
       </div>
-    </main>
+    </div>
   );
 };
 export default Main;
