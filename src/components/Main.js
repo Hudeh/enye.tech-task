@@ -10,13 +10,23 @@ const Main = ({
   onChange,
   handleFilterTitle,
   value,
+  searchProfile,
+  handleSearchProfile,
 }) => {
   return (
     <div className="table-layout">
       <div className="container">
+        <h1 style={{ textAlign: "center" }}>User Profiles</h1>
         <div className="title-filter">
-          <h1>User Profiles</h1>
-          <div>
+          <div className="search">
+            <input
+              type="search"
+              value={searchProfile}
+              onChange={handleSearchProfile}
+              placeholder="search for user by firstname or lastname..."
+            />
+          </div>
+          <div className="filter">
             Filter:{" "}
             <select value={value} onChange={onChange}>
               <option value="all">All</option>

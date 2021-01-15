@@ -17,14 +17,6 @@ const Header = ({ value, onChange }) => {
         <a href="http://www.enye.tech/">
           <img src={logo} alt="logo" height="80px" width="148px" />
         </a>
-        <div className="search">
-          <input
-            type="search"
-            value={value}
-            onChange={onChange}
-            placeholder="search for user by firstname or lastname..."
-          />
-        </div>
         <button className="icon" onClick={openSideBar}>
           &#9776;
         </button>

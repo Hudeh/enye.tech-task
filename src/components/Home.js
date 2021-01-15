@@ -104,12 +104,11 @@ function Home() {
             <CircularProgress />
           </div>
         </div>
-      ) : data.error && data.error.length > 0?
-      <div>
-        <p>Error : {data.error}</p>
-      </div>
-      :
-      (
+      ) : data.error && data.error.length > 0 ? (
+        <div>
+          <p>Error : {data.error}</p>
+        </div>
+      ) : (
         data.profiles &&
         data.profiles.length > 0 && (
           <Main
@@ -120,6 +119,8 @@ function Home() {
             onChange={handleFilterBy}
             handleFilterTitle={handleFilterTitle}
             value={filterBy}
+            searchProfile={searchProfile}
+            handleSearchProfile={handleSearchProfile}
           />
         )
       )}

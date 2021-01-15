@@ -22,29 +22,6 @@ code {
   .icon {
     visibility: hidden;
   }
-  .search {
-    border-radius: 5px;
-    height: 45px;
-    border: 1px solid #bd57b4;
-    align-items: center;
-    width: 620px;
-    padding: 1px 1px 1px 2px;
-    display: flex;
-    input {
-      border: none;
-      outline: none;
-      height: 45px;
-      width: 600px;
-    }
-    .icon {
-      height: 45px;
-      outline: none;
-      border: none;
-      cursor: pointer;
-      width: 50px;
-      font-size: 40px;
-    }
-  }
   .social {
     display: flex;
     justify-content: space-around;
@@ -73,6 +50,28 @@ code {
       display: flex;
       justify-content: space-evenly;
       align-items: center;
+      margin-bottom: 10px;
+      .search {
+        border-radius: 10px;
+        height: 45px;
+        border: 1px solid #bd57b4;
+        align-items: center;
+        width: 820px;
+        margin-left: -60px;
+        padding: 1px 1px 1px 5px;
+        display: flex;
+        input {
+          border: none;
+          outline: none;
+          height: 45px;
+          width: 600px;
+          padding: 1px 1px 1px 18px;
+          
+        }
+      }
+      .filter{
+        margin-left: 220px;
+      }
     }
     table {
       border-collapse: collapse;
