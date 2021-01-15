@@ -1,9 +1,10 @@
 import React from "react";
 import TablePagination from "@material-ui/core/TablePagination";
+import { CircularProgress } from "@material-ui/core";
 
 const ProfileTable = ({
   filterProfileData,
-
+  data: { error, loading },
   pagination: { page, rowsPerPage },
   handleChangeRowsPerPage,
   handleChangePage,
@@ -24,7 +25,14 @@ const ProfileTable = ({
             </tr>
           </thead>
           <tbody>
-            {filterProfileData.length > 0 &&
+            {loading ? (
+              <div>
+                <CircularProgress />
+              </div>
+            ) : error ? (
+              <h3>Error : {error} </h3>
+            ) : (
+              filterProfileData.length > 0 &&
               filterProfileData
                 .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
                 .map((data) => (
@@ -37,7 +45,8 @@ const ProfileTable = ({
                     <td>{data.PaymentMethod}</td>
                     <td>{data.CreditCardType}</td>
                   </tr>
-                ))}
+                ))
+            )}
           </tbody>
         </table>
       </div>
@@ -47,6 +56,7 @@ const ProfileTable = ({
         page={page}
         onChangePage={handleChangePage}
         onChangeRowsPerPage={handleChangeRowsPerPage}
+        className="pagi"
       />
     </>
   );

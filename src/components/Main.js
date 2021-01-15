@@ -23,7 +23,7 @@ const Main = ({
               type="search"
               value={searchProfile}
               onChange={handleSearchProfile}
-              placeholder="search for user by firstname or lastname..."
+              placeholder="Search Users by name."
             />
           </div>
           <div className="filter">

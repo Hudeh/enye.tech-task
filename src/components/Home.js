@@ -1,4 +1,3 @@
-import { CircularProgress } from "@material-ui/core";
 import React, { useState, useEffect } from "react";
 import Header from "./Header";
 import Main from "./Main";
@@ -28,7 +27,6 @@ function Home() {
 
       try {
         const request = await fetch("https://api.enye.tech/v1/challenge/records");
-        // const request =  await fetch("")
         const response = await request.json();
         setData({
           loading: false,
@@ -98,19 +96,6 @@ function Home() {
   return (
     <div>
       <Header value={searchProfile} onChange={handleSearchProfile} />
-      {data.loading ? (
-        <div className="loader-view-block h-100">
-          <div className="loader-view">
-            <CircularProgress />
-          </div>
-        </div>
-      ) : data.error && data.error.length > 0 ? (
-        <div>
-          <p>Error : {data.error}</p>
-        </div>
-      ) : (
-        data.profiles &&
-        data.profiles.length > 0 && (
           <Main
             filterProfileData={filteredProfileData}
             pagination={pagination}
@@ -121,9 +106,8 @@ function Home() {
             value={filterBy}
             searchProfile={searchProfile}
             handleSearchProfile={handleSearchProfile}
+            data={data}
           />
-        )
-      )}
     </div>
   );
 }
